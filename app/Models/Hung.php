@@ -9,7 +9,7 @@ class Hung extends Model
 {
     use HasFactory;
 
-    protected $table = 'hungs'; // Đặt tên bảng nếu khác tên model
+    protected $table = 'hungs'; 
 
     protected $fillable = [
         'name','descriptions','images','hung'
