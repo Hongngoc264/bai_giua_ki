@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HungController;
 
-Route::get('/', [HungController::class, 'index'])->name('home.index');  // Hiển thị danh sách
+Route::get('/', [HungController::class, 'index'])->name('home.index');  
 Route::get('/create', [HungController::class, 'create'])->name('home.create'); 
 Route::post('/store', [HungController::class, 'store'])->name('home.store');  
 Route::get('/edit/{id}', [HungController::class, 'edit'])->name('home.edit'); 
