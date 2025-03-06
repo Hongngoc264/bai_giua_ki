@@ -123,9 +123,9 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="{{ route('home') }}">Trang chủ</a>
-        <a href="{{ route('trangchu') }}">Sản phẩm</a>
-        <a href="{{ route('index') }}">Admin</a>
+        <a href="{{ route('trangchu') }}">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Liên hệ</a>
     </div>
     
 

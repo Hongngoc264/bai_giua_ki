@@ -8,14 +8,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+             
+            background-size: cover;
+            background-color: #b3e0ff; /* Xanh nhạt */
+            background-position: center;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            color: #be2d2d;
             margin-top: 30px;
         }
 
@@ -80,19 +84,19 @@
 <body>
     <div class="container">
         <h1>Thêm mới mục</h1>
-        <form action="{{ route('home.store') }}" method="POST">
+        <form action="{{ route('home.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <label for="name">Tên:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" minlength="5" required>
 
             <label for="descriptions">Mô tả:</label>
             <input type="text" id="descriptions" name="descriptions" required>
 
-            <label for="images">Hình ảnh:</label>
-            <input type="text" id="images" name="images" required>
+            <label >Hình ảnh:</label>
+            <input type="file" id="images"  name="images" required>
 
-            <label for="hung">Ngoc:</label>
+            <label for="hu ng">Ngoc:</label>
             <input type="text" id="hung" name="hung" required>
 
             <button type="submit">Lưu</button>
@@ -102,3 +106,4 @@
     </div>
 </body>
 </html>
+  

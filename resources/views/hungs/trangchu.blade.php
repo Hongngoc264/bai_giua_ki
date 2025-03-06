@@ -123,29 +123,19 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="{{ route('home') }}">Trang chủ</a>
-        <a href="{{ route('trangchu') }}">Sản phẩm</a>
-        <a href="{{ route('index') }}">Admin</a>
+       Danh Sách Sản Phẩm
     </div>
     
 
     <div class="container">
         <h1>Manager Book Lists</h1>
-        <a href="{{ route('home.create') }}" class="btn-add"><i class="fa fa-plus"></i> Thêm mới</a>
         <div class="product-grid">
             @foreach ($hungs as $hung)
                 <div class="product-item">
                     <img src="{{ asset($hung->images) }}" alt="Image">
                     <div class="product-name">{{ $hung->name }}</div>
                     <div class="product-description">{{ $hung->descriptions }}</div>
-                    <div class="product-actions">
-                        <a href="{{ route('home.edit', $hung->id) }}" class="btn-edit"><i class="fa fa-edit"></i> Sửa</a>
-                        <form action="{{ route('home.destroy', $hung->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-delete"><i class="fa fa-trash"></i> Xóa</button>
-                        </form>
-                    </div>
+                    
                 </div>
             @endforeach
         </div>

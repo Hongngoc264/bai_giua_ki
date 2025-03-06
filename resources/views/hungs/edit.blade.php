@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+           
+            background-size: cover;
+            
+            background-color: #b3e0ff; /* Xanh nhạt */
+            background-position: center;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
         }
@@ -80,15 +84,33 @@
 <body>
     <div class="container">
         <h1>Sửa mục</h1>
-        <form action="{{ route('home.update', $hung->id) }}" method="POST">
+        <form action="{{ route('home.update', $hung->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-
+        
             <label for="name">Tên:</label>
-            <input type="text" id="name" name="name" value="{{ $hung->name }}" required>
-
+            <input type="text" id="name" name="name" value="{{ old('name', $hung->name) }}" required>
+        
+            <label for="descriptions">Mô tả:</label>
+            <input type="text" id="descriptions" name="descriptions" value="{{ old('descriptions', $hung->descriptions) }}" required>
+        
+            <label for="hung">Ngoc:</label>
+            <input type="text" id="hung" name="hung" value="{{ old('hung', $hung->hung) }}" required>
+        
+            <label for="images">Hình ảnh:</label>
+           
+            @if ($hung->images)
+                <div>
+                    <img src="{{ asset($hung->images) }}" alt="Current Image" width="150">
+                </div>
+            @endif
+        
+            <input type="file" id="images" name="images">
+        
             <button type="submit">Cập nhật</button>
         </form>
+        
+        
 
         <a href="{{ route('home.index') }}" class="back-link">Quay lại danh sách</a>
     </div>
